@@ -27,7 +27,8 @@ const FormErrorDefault : FormError = {
   status: 0,
   message: null,
   severity: null,
-  fields: []
+  fields: [],
+  url: null
 }
 
 export { FormErrorDefault }

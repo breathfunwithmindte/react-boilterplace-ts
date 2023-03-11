@@ -9,4 +9,5 @@ import GenericError from "./GenericError";
 export default interface PageError extends GenericError
 {
   status: HttpStatus
+  url: string | null
 }

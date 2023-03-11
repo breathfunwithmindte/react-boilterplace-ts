@@ -20,6 +20,7 @@ import { useOnClickOutside } from './hooks/useOnClickOutside';
 import GenericForm from './components/GenericForm';
 import { Field } from './types/GenericForm';
 import FieldType from './enums/FieldType';
+import IncidentPage from './pages/auth/IncidentPage';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, () => console.log('clicked outside'));
 
-  console.log(response, error, loading)
+  // console.log(response, error, loading)
 
   if(state.user === null) return (
     <div className="App">
@@ -44,18 +45,18 @@ function App() {
 
         <Routes>
           <Route path="/" element={<div> Page 1 </div>} />
-          <Route path="/itsm/:pagename" element={<div> Page 2 </div>} />
-          <Route path="/itsm/incident" element={<div> Page 3 </div>} />
+          <Route path="/itsm/incident/new" element={<div> Page 2 </div>} />
+          <Route path="/itsm/incident/list" element={<IncidentPage />} />
           <Route path="/solutions" element={<div> Page 4 </div>} />
           <Route path="/dbs" element={<div> Page 5 </div>} />
         </Routes>
 
-        <GenericForm title={null} fields={[
+        {/* <GenericForm title={null} fields={[
           { fieldName: "groupname", fieldType: FieldType.TEXTFIELD, label: "Group Name", placeholder: null  },
           { fieldName: "groupname", fieldType: FieldType.TEXTFIELD, label: "Group Name", placeholder: null  },
           { fieldName: "client_id", fieldType: FieldType.TEXTFIELD, label: "Client ID", placeholder: null  },
           { fieldName: "client_secret", fieldType: FieldType.TEXTFIELD, label: "Client Secret", placeholder: null  }
-        ]} handleChange={(event: any, field: Field) => {console.log("hello")}} state={{}} />
+        ]} handleChange={(event: any, field: Field) => {console.log("hello")}} state={{}} /> */}
 
       </div>
     </AuthenticatedLayout>
